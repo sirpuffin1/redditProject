@@ -9,18 +9,11 @@ import { AddUser } from 'src/app/actions/user.action';
 })
 export class CreateComponent implements OnInit {
 
-  angForm!: FormGroup;
 
-  constructor( private fb: FormBuilder,private store: Store) {
-    this.createForm();
+  constructor( private store: Store) {
   }
 
-  createForm() {
-    this.angForm = this.fb.group({
-      name: ['', Validators.required ],
-      email: ['', Validators.required ]
-   });
-  }
+
 
   addUser(name: string , email: string) {
     this.store.dispatch(new AddUser({ name: name, email: email, points: 0}));
