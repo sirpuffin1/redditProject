@@ -14,10 +14,14 @@
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Leave a comment</mat-label>
           <textarea matInput #content placeholder="Ex. It makes me feel..."></textarea>
+
         </mat-form-field>
+
       </form>
+      <button (click)="addUser(title.value, content.value)">Post</button>
     </div>
   </mat-tab>
+
 
 
     <mat-tab label="Link">
@@ -25,10 +29,12 @@
         <form class="example-form">
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>   Url Link</mat-label>
-            <span matPrefix>🔗</span>
-            <input type="text" matInput placeholder="www.google.com">
+            <span matSuffix>🔗</span>
+            <input type="text" matInput #url placeholder="www.google.com">
+
           </mat-form-field>
         </form>
+        <button (click)="addUser('Url:', url.value)">Post</button>
       </div>
 </mat-tab>
   <mat-tab label="Media">
@@ -41,8 +47,6 @@
 
 
 
-      <div class="form-group">
-        <button (click)="addUser(title.value, content.value)">Create Post</button>
-      </div>
+
 
 
