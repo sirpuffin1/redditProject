@@ -7,8 +7,12 @@ import { AppComponent } from './app.component';
 import { CreateComponent } from './components/create/create.component';
 import { IndexComponent } from './components/index/index.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UserState, UserStateModel } from './state/user.state';
+import { UserState } from './state/user.state';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material/input'
+
 
 @NgModule({
   declarations: [
@@ -18,6 +22,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    MatSelectModule,
+    MatTabsModule,
+    MatInputModule,
     NgxsModule.forRoot([
       UserState
     ]),
