@@ -6,13 +6,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr (click)="delUser(user.name)" *ngFor="let user of users$ | async">
+      <tr  *ngFor="let user of users$ | async">
         <button (click)="incrementUser(user.email)">👍</button>
         <button (click)="decrementUser(user.email)">👎</button>
+        <td>{{user.points}}</td>
         <td><b>Title</b></td>
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
-        <td>{{user.points}}</td>
+
+        <button (click)="delUser(user.name)">Remove Post</button>
       </tr>
     </tbody>
   </table>
